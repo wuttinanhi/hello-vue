@@ -22,7 +22,7 @@ const tutorialMap: { [key: string]: any } = {
   'Emit Parent': EmitParent
 }
 
-const showingTutorial = ref('CounterTutorial')
+const showingTutorial = ref('Basic Counter')
 </script>
 
 <template>
