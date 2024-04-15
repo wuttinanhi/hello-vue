@@ -15,6 +15,8 @@ onMounted(() => {
 </script>
 
 <template>
+  <h1>Lifecycle</h1>
+
   <p ref="pElementRef">hello</p>
 
   <p>Delayed text: {{ delayedText }}</p>

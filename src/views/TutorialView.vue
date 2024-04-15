@@ -1,49 +1,38 @@
 <script setup lang="ts">
 import ConditionalRendering from '@/components/ConditionalRendering.vue'
-import CounterComp from '@/components/CounterComp.vue'
+import BasicCounter from '@/components/BasicCounter.vue'
 import EmitParent from '@/components/EmitParent.vue'
 import InputExample from '@/components/InputExample.vue'
 import InputPropsParent from '@/components/InputPropsParent.vue'
 import LifeCycle from '@/components/LifeCycle.vue'
 import SlotParent from '@/components/SlotParent.vue'
 import TodoList from '@/components/TodoList.vue'
-import Watcher from '@/components/Watcher.vue'
+import MyWatcher from '@/components/MyWatcher.vue'
+import { ref } from 'vue'
+
+const tutorialMap: { [key: string]: any } = {
+  'Basic Counter': BasicCounter,
+  'Input Example': InputExample,
+  'Conditional Rendering': ConditionalRendering,
+  'Todo List': TodoList,
+  'Input Props': InputPropsParent,
+  'Life Cycle': LifeCycle,
+  Watcher: MyWatcher,
+  'Slot Parent': SlotParent,
+  'Emit Parent': EmitParent
+}
+
+const showingTutorial = ref('CounterTutorial')
 </script>
 
 <template>
-  <h1>Basic Counter</h1>
-  <CounterComp />
+  <h1>Tutorial Stuff</h1>
+
+  <button v-for="(value, key) in tutorialMap" :key="key" @click="showingTutorial = key.toString()">
+    {{ key }}
+  </button>
+
   <hr />
 
-  <h1>Input Example</h1>
-  <InputExample />
-  <hr />
-
-  <h1>Conditional Rendering</h1>
-  <ConditionalRendering />
-  <hr />
-
-  <h1>Todo List</h1>
-  <TodoList />
-  <hr />
-
-  <h1>Lifecycle</h1>
-  <LifeCycle />
-  <hr />
-
-  <h1>Watcher</h1>
-  <Watcher />
-  <hr />
-
-  <h1>Input Props</h1>
-  <InputPropsParent />
-  <hr />
-
-  <h1>Emit</h1>
-  <EmitParent />
-  <hr />
-
-  <h1>Slot</h1>
-  <SlotParent />
-  <hr />
+  <component :is="tutorialMap[showingTutorial]" />
 </template>

@@ -10,6 +10,8 @@ function changeGreeting() {
 </script>
 
 <template>
+  <h1>Input Props</h1>
+
   <InputPropsChild :msg="greeting" />
 
   <button @click="changeGreeting">Change greeting</button>

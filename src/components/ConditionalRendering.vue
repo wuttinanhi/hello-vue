@@ -8,6 +8,8 @@ function toggle() {
 </script>
 
 <template>
+  <h1>Conditional Rendering</h1>
+
   <button @click="toggle">Toggle Show</button>
 
   <div v-if="shouldShow">

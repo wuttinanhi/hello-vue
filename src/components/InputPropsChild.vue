@@ -5,5 +5,5 @@ const props = defineProps({
 </script>
 
 <template>
-  <h3>Value from parent: {{ msg }}</h3>
+  <h3>Value from parent: {{ props.msg }}</h3>
 </template>
