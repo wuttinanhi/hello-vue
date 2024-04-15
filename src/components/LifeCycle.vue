@@ -1,10 +1,11 @@
-<script setup>
-import { ref, onMounted } from 'vue'
+<script setup lang="ts">
+import { onMounted, ref } from 'vue'
 
 const pElementRef = ref(null)
 const delayedText = ref('')
+
 onMounted(() => {
-  pElementRef.value.textContent = 'mounted!'
+  ;(pElementRef.value as any).textContent = 'mounted!'
 
   // delay the text change after 2 seconds
   setTimeout(() => {

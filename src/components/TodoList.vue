@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue'
 
 // give each todo a unique id
@@ -16,7 +16,7 @@ function addTodo() {
   newTodo.value = ''
 }
 
-function removeTodo(todo) {
+function removeTodo(todo: { id: number; text: string }) {
   todos.value = todos.value.filter((t) => t !== todo)
 }
 </script>

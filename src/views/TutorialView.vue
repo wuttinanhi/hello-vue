@@ -1,9 +1,13 @@
 <script setup lang="ts">
 import ConditionalRendering from '@/components/ConditionalRendering.vue'
 import CounterComp from '@/components/CounterComp.vue'
+import EmitParent from '@/components/EmitParent.vue'
 import InputExample from '@/components/InputExample.vue'
-import TodoList from '@/components/TodoList.vue'
+import InputPropsParent from '@/components/InputPropsParent.vue'
 import LifeCycle from '@/components/LifeCycle.vue'
+import SlotParent from '@/components/SlotParent.vue'
+import TodoList from '@/components/TodoList.vue'
+import Watcher from '@/components/Watcher.vue'
 </script>
 
 <template>
@@ -25,5 +29,21 @@ import LifeCycle from '@/components/LifeCycle.vue'
 
   <h1>Lifecycle</h1>
   <LifeCycle />
+  <hr />
+
+  <h1>Watcher</h1>
+  <Watcher />
+  <hr />
+
+  <h1>Input Props</h1>
+  <InputPropsParent />
+  <hr />
+
+  <h1>Emit</h1>
+  <EmitParent />
+  <hr />
+
+  <h1>Slot</h1>
+  <SlotParent />
   <hr />
 </template>
