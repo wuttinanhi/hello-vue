@@ -1,9 +1,19 @@
 <script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
+import { ref } from 'vue'
+
+const count = ref(0)
+
+function increment() {
+  count.value++
+}
 </script>
 
 <template>
-  <main>
+  <!-- <main>
     <TheWelcome />
-  </main>
+  </main> -->
+
+  <h1>COUNT: {{ count }}</h1>
+
+  <button @click="increment">Increment</button>
 </template>
